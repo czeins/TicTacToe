@@ -21,6 +21,12 @@
 			player1wins: null
 		};
 
+// function Player(name, symbol){
+// 	this.name = name;
+// 	this.symbol = symbol;
+// 	this.wins = 0;
+// }
+// self.player1 = new Player("Claude", "6");
 
 // players
 		self.players = [
@@ -91,11 +97,12 @@
 
 		self.doBoth = function(index) {
 			if (self.winner.gameOver === true) {
-				return;
+				console.log("gameOver");
 			} else {
 				self.checkClicked(index);
 				self.checkForThree();
 			}
+			calculateScore();
 		};
 
 			// Determining if Tic Tac Toe has been achieved.
@@ -152,12 +159,16 @@
 				}
 			};
 
-//Calculate Score
+//Calculateiik Score
 			function calculateScore() {
+				console.log("calculateScore");
+				console.log(self.winner.player1wins);
 				if (self.winner.player1wins === true) {
-					self.players[0].wins = (self.players[0].wins)++;
+					self.players[0].wins += 1;
+					console.log(self.players[0].wins);
+
 				} else if (self.winner.player1wins === false) {
-					self.players[1].wins = (self.players[1].wins)++;
+					self.players[1].wins = self.players[1].wins++;
 				}
 			};
 		}
