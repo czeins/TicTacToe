@@ -14,18 +14,20 @@
 
 </head>
 <body ng-controller="sqController as mainCtrl">
-<div id="winner" class="spiritText fade-in">Hello? <span class="delay1">Anabelle?</span><span class="delay2"> Is that you?</span> </div>
-
-<div id="score">{{mainCtrl.players[0].wins}}</div>
-
-<div id="winner" class="spiritText fade-in">{{mainCtrl.winner.winner}}</div>
-<div id="ticTacContainer">
-	<div class="ticTacSquare" ng-click="mainCtrl.doBoth($index)" ng-repeat="box in mainCtrl.squares">{{box.value}}</div>
+<div id="message" class="spiritText">
+    <span class="fadeDuration1 AnnabelleMessage">You awake in a forest, thick with fog and night.</span><br />
+    <span class="fadeDuration2 AnnabelleMessage">"Annabelle?" You ask the air, "Are you there?"</span><br />
+    <span class="fadeDuration3 AnnabelleMessage">A figure approaches.</span>
 </div>
 
+<div id="score" class="spiritText">The score is {{mainCtrl.players[0].wins}} to {{mainCtrl.players[1].wins}}.</div>
 
+    <div id="winner" class="spiritText fade-in">{{mainCtrl.winner.winner}}</div>
+    <div id="ticTacContainer">
+    	<div class="ticTacSquare" ng-click="mainCtrl.doBoth($index)" ng-repeat="box in mainCtrl.squares">{{box.value}}</div>
+    </div>
 
-
+    <div ng-click="mainCtrl.resetGame()" class="button spiritText">Continue?</div>
 
 </body>
 </html>

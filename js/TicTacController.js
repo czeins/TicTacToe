@@ -97,12 +97,12 @@
 
 		self.doBoth = function(index) {
 			if (self.winner.gameOver === true) {
-				console.log("gameOver");
 			} else {
 				self.checkClicked(index);
 				self.checkForThree();
 			}
 			calculateScore();
+			playtoFive();
 		};
 
 			// Determining if Tic Tac Toe has been achieved.
@@ -120,28 +120,28 @@
 				square8 = self.squares[7].value,
 				square9 = self.squares[8].value;
 
-			if (square1 == square2 && square2 == square3 && square1 == square3 && square1 != null) {
+			if (square1 == square2 && square2 == square3 && square1 == square3 && square1 !== null) {
 				announceWinner(square1);
 			}
-			else if (square4 == square5 && square4 == square6 && square5 == square6 && square4 != null){
+			else if (square4 == square5 && square4 == square6 && square5 == square6 && square4 !== null){
 				announceWinner(square4);
 			}
-			else if (square7 == square8 && square7 == square9 && square8 == square9 && square7 != null){
+			else if (square7 == square8 && square7 == square9 && square8 == square9 && square7 !== null){
 				announceWinner(square7);
 			}
-			else if (square1 == square4 && square1 == square7 && square4 == square7 && square1 != null){
+			else if (square1 == square4 && square1 == square7 && square4 == square7 && square1 !== null){
 				announceWinner(square1);
 			}
-			else if (square2 == square5 && square2 == square8 && square5 == square8 && square2 != null){
+			else if (square2 == square5 && square2 == square8 && square5 == square8 && square2 !== null){
 				announceWinner(square2);
 			}
-			else if (square3 == square6 && square3 == square9 && square6 == square9 && square3 != null){
+			else if (square3 == square6 && square3 == square9 && square6 == square9 && square3 !== null){
 				announceWinner(square3);
 			}
-			else if (square1 == square5 && square1 == square9 && square5 == square9 && square1 != null){
+			else if (square1 == square5 && square1 == square9 && square5 == square9 && square1 !== null){
 				announceWinner(square1);
 			}
-			else if (square3 == square5 && square3 == square7 && square5 == square7 && square3 != null){
+			else if (square3 == square5 && square3 == square7 && square5 == square7 && square3 !== null){
 				announceWinner(square3);
 			}
 		};
@@ -153,24 +153,40 @@
 					self.winner.gameOver = true;
 					self.winner.player1wins = true;
 				} else if (square === "o") {
-					self.winner.winner = "I'm so sorry, Annabelle.";
+					self.winner.winner = "You have died.";
 					self.winner.gameOver = true;
 					self.winner.player1wins = false;
 				}
-			};
+			}
 
-//Calculateiik Score
+//Calculate Score
 			function calculateScore() {
-				console.log("calculateScore");
-				console.log(self.winner.player1wins);
 				if (self.winner.player1wins === true) {
 					self.players[0].wins += 1;
-					console.log(self.players[0].wins);
-
+					self.winner.player1wins = null;
 				} else if (self.winner.player1wins === false) {
-					self.players[1].wins = self.players[1].wins++;
+					self.players[1].wins += 1;
+					self.winner.player1wins = null;
 				}
-			};
-		}
+			}
 
+//Reset Game
+			self.resetGame = function() {
+				for (i = 0; i < self.squares.length; i++) {
+				 self.squares[i].value = null; }
+				 self.winner.gameOver = false;
+
+			};
+
+			function playtoFive() {
+				if (self.players[0].wins === 5 || self.players[1].wins === 5) {
+				console.log("Hello!"); }
+			}
+
+
+
+
+
+//closing IFFE
+}
 })();
