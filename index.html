@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="TicTacToe">
+<head>
+	<title>Annabelle?</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--Sourcing Angular-->
+ <script type="text/javascript" charset="utf-8" src="js/angular.min.js"></script>
+
+<!-- Source in module -->
+ <script type="text/javascript" charset="utf-8"src="js/main.js"></script>
+
+<!-- Source in controller -->
+ <script type="text/javascript" charset="utf-8"src="js/TicTacController.js"></script>
+
+</head>
+<body ng-controller="sqController as mainCtrl">
+<div id="winner" class="spiritText fade-in">Hello? <span class="delay1">Anabelle?</span><span class="delay2"> Is that you?</span> </div>
+
+<div id="score">{{mainCtrl.players[0].wins}}</div>
+
+<div id="winner" class="spiritText fade-in">{{mainCtrl.winner.winner}}</div>
+<div id="ticTacContainer">
+	<div class="ticTacSquare" ng-click="mainCtrl.doBoth($index)" ng-repeat="box in mainCtrl.squares">{{box.value}}</div>
+</div>
+
+
+
+
+
+</body>
+</html>

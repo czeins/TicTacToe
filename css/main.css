@@ -1,0 +1,128 @@
+html {
+	background-color: black;
+	background-image: url('../images/background_forest.jpg');
+	background-size: cover;
+	margin: 0;
+	padding: 100px;
+	color: white;
+	overflow-x: hidden; /* For Opera */
+	-webkit-box-shadow:
+		inset #1f1f1f 0 0 0px 25px;
+	-moz-box-shadow:
+		inset #1f1f1f 0 0 0px 25px;
+	box-shadow:
+		inset #1f1f1f 0 0 0px 25px;
+}
+
+#ticTacContainer {
+	border:0px solid #999999;
+	height: 300px;
+	width: 300px;
+	position: relative;
+	margin: auto;
+}
+
+#winner {
+	margin: 0 auto;
+	width: 800px;
+	text-align: center;
+	height: 100px;
+}
+
+.spiritText {
+	font-family: avenir;
+	font-weight: 300;
+	font-size: 1em;
+	text-shadow: 0 0 10px rgba(255,255,255,.5);
+}
+
+div > .ticTacSquare {
+	height: 100px;
+	width: 100px;
+	float: left;
+	color: black;
+	text-align: center;
+	line-height: 100px;
+	font-family: "Helvetica";
+	font-size: 2em;
+	color: #ffffff;
+	text-shadow: 0 0 10px rgba(255,255,255,1);
+
+	overflow-x: hidden; /* For Opera */
+	-webkit-box-shadow:
+		inset #999999 0 0 0px 1px;
+	-moz-box-shadow:
+		inset #999999 0 0 0px 1px;
+	box-shadow:
+		inset #999999 0 0 0px 1px;
+
+}
+
+.ticTacSquareClick {
+	background-color: lightgreen;
+	height: 200px;
+	width: 200px;
+	float: left;
+	color: black;
+}
+
+/*
+
+Fading Effects
+
+
+*/
+
+@-webkit-keyframes fadeIn {
+	from { opacity:0; }
+	to { opacity:1; }
+}
+
+@-moz-keyframes fadeIn {
+	from { opacity:0; }
+	to { opacity:1; }
+}
+
+@keyframes fadeIn {
+	from { opacity:0; }
+	to { opacity:1; }
+}
+
+.fade-in {
+ opacity:0;  /* make things invisible upon start */
+ -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+ -moz-animation:fadeIn ease-in 1;
+ animation:fadeIn ease-in 1;
+
+ -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+ -moz-animation-fill-mode:forwards;
+ animation-fill-mode:forwards;
+
+ -webkit-animation-duration:3s;
+ -moz-animation-duration:3s;
+ animation-duration:3s;
+}
+
+.delay0 {
+-webkit-animation-delay: .7s;
+-moz-animation-delay: .7s;
+animation-delay: .7s;
+}
+
+.delay1 {
+-webkit-animation-delay: 1s;
+-moz-animation-delay: 1s;
+animation-delay: 1s;
+}
+
+.delay2 {
+-webkit-animation-delay: 2.3s;
+-moz-animation-delay: 2.3s;
+animation-delay: 2.3s;
+}
+
+.delay3 {
+ -webkit-animation-delay: 2.7s;
+ -moz-animation-delay: 2.7s;
+ animation-delay: 2.7s;
+}
