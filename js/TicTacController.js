@@ -19,7 +19,6 @@
 			winner: "",
 			gameOver: false,
 			player1wins: null
-
 		};
 
 
@@ -141,7 +140,7 @@
 		};
 
 //When function runs, it will determine if "x" or "o" and add a message to a the Winner div accordingly.
-			announceWinner = function(square) {
+			function announceWinner(square) {
 				if (square === "x") {
 					self.winner.winner = "It appears you have won.";
 					self.winner.gameOver = true;
@@ -154,7 +153,7 @@
 			};
 
 //Calculate Score
-			calculateScore = function() {
+			function calculateScore() {
 				if (self.winner.player1wins === true) {
 					self.players[0].wins = (self.players[0].wins)++;
 				} else if (self.winner.player1wins === false) {
